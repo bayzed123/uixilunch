@@ -375,7 +375,7 @@ export default function Home() {
             <div>
               <h4 className="font-bold mb-4 text-accent">About</h4>
               <ul className="space-y-2 text-sm text-muted-foreground">
-                <li><a href="#" className="hover:text-accent transition-colors">About Us</a></li>
+                <li><a href="/about" className="hover:text-accent transition-colors">About Us</a></li>
                 <li><a href="#" className="hover:text-accent transition-colors">Our Team</a></li>
                 <li><a href="#" className="hover:text-accent transition-colors">Our Process</a></li>
                 <li><a href="#" className="hover:text-accent transition-colors">Blog</a></li>
@@ -454,10 +454,10 @@ export default function Home() {
                   </button>
                 </DropdownMenuTrigger>
                 <DropdownMenuContent align="end" className="w-48">
-                  <DropdownMenuItem asChild>
-                    <a href="#" className="cursor-pointer">
+                  <DropdownMenuItem asChild onClick={() => navigate("/about")}>
+                    <div className="cursor-pointer">
                       About Page
-                    </a>
+                    </div>
                   </DropdownMenuItem>
                   <DropdownMenuItem asChild>
                     <a href="#" className="cursor-pointer">
