@@ -1,8 +1,15 @@
 import { Button } from "@/components/ui/button";
-import { ArrowRight, ExternalLink, Github, Linkedin, Mail, Star, Loader2, Menu, X } from "lucide-react";
+import { ArrowRight, ExternalLink, Github, Linkedin, Mail, Star, Loader2, Menu, X, MoreVertical, Calendar } from "lucide-react";
 import { useLocation } from "wouter";
 import { trpc } from "@/lib/trpc";
 import { useState, useEffect } from "react";
+import {
+  DropdownMenu,
+  DropdownMenuTrigger,
+  DropdownMenuContent,
+  DropdownMenuItem,
+  DropdownMenuSeparator,
+} from "@/components/ui/dropdown-menu";
 
 export default function Home() {
   const [, navigate] = useLocation();
@@ -28,7 +35,7 @@ export default function Home() {
       {/* Navigation */}
       <nav className="fixed top-0 w-full bg-black/95 backdrop-blur border-b border-border z-50">
         <div className="container flex items-center justify-between h-16">
-          <div className="text-2xl font-bold text-accent">PORTFOLIO</div>
+          <div className="text-2xl font-bold text-accent">VISUALCRAFT</div>
           <div className="hidden md:flex gap-8">
             <a href="#projects" className="text-foreground hover:text-accent transition-colors">
               Projects
@@ -235,7 +242,9 @@ export default function Home() {
               { step: 3, title: "Quote", desc: "Clear pricing and timeline provided" },
               { step: 4, title: "Get Started", desc: "Jump into the project with weekly updates" },
             ].map((item, idx) => (
-              <div key={idx} className="border-2 dashed border-accent p-6 hover:border-red-500 transition-all duration-300 relative stagger-item">
+              <div key={idx} 
+                className="border-2 dashed border-accent p-6 hover:border-red-500 transition-all duration-300 relative stagger-item"
+              >
                 <div className="absolute -top-3 -left-3 w-6 h-6 bg-accent text-black flex items-center justify-center font-bold text-xs">
                   {item.step}
                 </div>
@@ -322,7 +331,7 @@ export default function Home() {
             Let's collaborate and create something exceptional together.
           </p>
           <div className="flex flex-col md:flex-row gap-4 justify-center">
-            <a href="mailto:hello@example.com">
+            <a href="mailto:cwb.agency@outlook.com">
               <button className="px-8 py-3 bg-black text-accent border-2 border-black font-bold hover:bg-transparent transition-all duration-300 uppercase tracking-wider">
                 <Mail className="inline mr-2" size={18} />
                 Send Email
@@ -330,7 +339,7 @@ export default function Home() {
             </a>
             <a href="https://calendly.com" target="_blank" rel="noopener noreferrer">
               <button className="px-8 py-3 bg-transparent text-black border-2 border-black font-bold hover:bg-black hover:text-accent transition-all duration-300 uppercase tracking-wider">
-                <ExternalLink className="inline mr-2" size={18} />
+                <Calendar className="inline mr-2" size={18} />
                 Book a Call
               </button>
             </a>
@@ -338,53 +347,135 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Footer */}
+      {/* Enhanced Footer */}
       <footer className="border-t border-border py-12 bg-card">
         <div className="container">
-          <div className="grid grid-cols-1 md:grid-cols-4 gap-8 mb-8">
+          {/* Footer Top - Book a Call Button */}
+          <div className="mb-12 flex flex-col md:flex-row items-center justify-between gap-6 pb-8 border-b border-border">
             <div>
-              <h3 className="font-bold text-lg mb-4 text-accent">PORTFOLIO</h3>
-              <p className="text-muted-foreground text-sm">
-                Premium digital craftsmanship for global brands.
+              <h3 className="text-2xl font-bold text-accent mb-2">VISUALCRAFT</h3>
+              <p className="text-muted-foreground text-sm max-w-md">
+                Premium digital craftsmanship for global brands. Transform your vision into exceptional digital experiences.
               </p>
             </div>
+            <div className="flex flex-col gap-3 items-center md:items-end">
+              <a href="https://calendly.com" target="_blank" rel="noopener noreferrer">
+                <button className="px-8 py-3 bg-accent text-black border-2 border-accent font-bold hover:bg-transparent hover:text-accent transition-all duration-300 uppercase tracking-wider flex items-center gap-2 whitespace-nowrap">
+                  <Calendar size={18} />
+                  Book a Call
+                </button>
+              </a>
+              <p className="text-xs text-muted-foreground">Schedule a consultation with our team</p>
+            </div>
+          </div>
+
+          {/* Footer Main Content */}
+          <div className="grid grid-cols-1 md:grid-cols-4 gap-8 mb-8">
+            {/* Column 1 - About */}
             <div>
-              <h4 className="font-bold mb-4">Quick Links</h4>
+              <h4 className="font-bold mb-4 text-accent">About</h4>
               <ul className="space-y-2 text-sm text-muted-foreground">
-                <li><a href="#projects" className="hover:text-accent transition-colors">Projects</a></li>
+                <li><a href="#" className="hover:text-accent transition-colors">About Us</a></li>
+                <li><a href="#" className="hover:text-accent transition-colors">Our Team</a></li>
+                <li><a href="#" className="hover:text-accent transition-colors">Our Process</a></li>
+                <li><a href="#" className="hover:text-accent transition-colors">Blog</a></li>
+              </ul>
+            </div>
+
+            {/* Column 2 - Services */}
+            <div>
+              <h4 className="font-bold mb-4 text-accent">Services</h4>
+              <ul className="space-y-2 text-sm text-muted-foreground">
+                <li><a href="#services" className="hover:text-accent transition-colors">UI/UX Design</a></li>
+                <li><a href="#services" className="hover:text-accent transition-colors">Web Development</a></li>
+                <li><a href="#services" className="hover:text-accent transition-colors">Branding</a></li>
+                <li><a href="#services" className="hover:text-accent transition-colors">Mobile Apps</a></li>
+              </ul>
+            </div>
+
+            {/* Column 3 - Quick Links */}
+            <div>
+              <h4 className="font-bold mb-4 text-accent">Quick Links</h4>
+              <ul className="space-y-2 text-sm text-muted-foreground">
+                <li><a href="#projects" className="hover:text-accent transition-colors">Portfolio</a></li>
                 <li><a href="#services" className="hover:text-accent transition-colors">Services</a></li>
                 <li><a href="#contact" className="hover:text-accent transition-colors">Contact</a></li>
+                <li><a href="https://www.sayadbayezid.com" target="_blank" rel="noopener noreferrer" className="hover:text-accent transition-colors">Personal Site</a></li>
               </ul>
             </div>
+
+            {/* Column 4 - Social Links */}
             <div>
-              <h4 className="font-bold mb-4">Services</h4>
-              <ul className="space-y-2 text-sm text-muted-foreground">
-                <li>UI/UX Design</li>
-                <li>Web Development</li>
-                <li>Branding</li>
-                <li>Mobile Apps</li>
-              </ul>
-            </div>
-            <div>
-              <h4 className="font-bold mb-4">Follow</h4>
-              <div className="flex gap-4">
-                <a href="https://github.com" target="_blank" rel="noopener noreferrer" className="text-muted-foreground hover:text-accent transition-colors">
-                  <Github size={20} />
+              <h4 className="font-bold mb-4 text-accent">Connect With Me</h4>
+              <div className="space-y-2">
+                <a href="https://www.linkedin.com/in/sayadbayezid?utm_source=share_via&utm_content=profile&utm_medium=member_ios" target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 text-sm text-muted-foreground hover:text-accent transition-colors">
+                  <Linkedin size={16} />
+                  LinkedIn
                 </a>
-                <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" className="text-muted-foreground hover:text-accent transition-colors">
-                  <Linkedin size={20} />
+                <a href="https://youtube.com/@cwbayezid?si=Ioo7cR6ne1I5o6ot" target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 text-sm text-muted-foreground hover:text-accent transition-colors">
+                  <ExternalLink size={16} />
+                  YouTube
                 </a>
-                <a href="mailto:hello@example.com" className="text-muted-foreground hover:text-accent transition-colors">
-                  <Mail size={20} />
+                <a href="https://www.instagram.com/freelancer_bayezid0?igsh=MTdrOWI5NTc2Zjhsag%3D%3D&utm_source=qr" target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 text-sm text-muted-foreground hover:text-accent transition-colors">
+                  <ExternalLink size={16} />
+                  Instagram
+                </a>
+                <a href="https://www.behance.net/syedbayxed/moodboards" target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 text-sm text-muted-foreground hover:text-accent transition-colors">
+                  <ExternalLink size={16} />
+                  Behance
+                </a>
+                <a href="https://beacons.ai/connectwithbayezid" target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 text-sm text-muted-foreground hover:text-accent transition-colors">
+                  <ExternalLink size={16} />
+                  All Links
+                </a>
+                <a href="mailto:cwb.agency@outlook.com" className="flex items-center gap-2 text-sm text-muted-foreground hover:text-accent transition-colors">
+                  <Mail size={16} />
+                  Email
                 </a>
               </div>
             </div>
           </div>
-          <div className="border-t border-border pt-8 flex flex-col md:flex-row justify-between items-center text-sm text-muted-foreground">
-            <p>&copy; 2026 Premium Portfolio. All rights reserved.</p>
-            <div className="flex gap-6 mt-4 md:mt-0">
-              <a href="#" className="hover:text-accent transition-colors">Privacy Policy</a>
-              <a href="#" className="hover:text-accent transition-colors">Terms of Service</a>
+
+          {/* Footer Bottom - 3-Dot Menu & Copyright */}
+          <div className="border-t border-border pt-8 flex flex-col md:flex-row justify-between items-center text-sm text-muted-foreground gap-4">
+            <p>&copy; 2026 VISUALCRAFT. All rights reserved.</p>
+            
+            <div className="flex items-center gap-6">
+              <div className="flex gap-6">
+                <a href="#" className="hover:text-accent transition-colors">Privacy Policy</a>
+                <a href="#" className="hover:text-accent transition-colors">Terms of Service</a>
+              </div>
+
+              {/* 3-Dot Menu */}
+              <DropdownMenu>
+                <DropdownMenuTrigger asChild>
+                  <button className="p-2 hover:bg-accent/10 rounded transition-colors text-accent hover:text-accent">
+                    <MoreVertical size={20} />
+                  </button>
+                </DropdownMenuTrigger>
+                <DropdownMenuContent align="end" className="w-48">
+                  <DropdownMenuItem asChild>
+                    <a href="#" className="cursor-pointer">
+                      About Page
+                    </a>
+                  </DropdownMenuItem>
+                  <DropdownMenuItem asChild>
+                    <a href="#" className="cursor-pointer">
+                      Contact Page
+                    </a>
+                  </DropdownMenuItem>
+                  <DropdownMenuItem asChild>
+                    <a href="#" className="cursor-pointer">
+                      Pricing Page
+                    </a>
+                  </DropdownMenuItem>
+                  <DropdownMenuItem asChild>
+                    <a href="#projects" className="cursor-pointer">
+                      Portfolio Page
+                    </a>
+                  </DropdownMenuItem>
+                </DropdownMenuContent>
+              </DropdownMenu>
             </div>
           </div>
         </div>
