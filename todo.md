@@ -6,7 +6,7 @@
 - [x] Project showcase gallery with grid layout
 - [x] Project detail pages
 - [x] Services/skills section
-- [x] Testimonials carousel
+- [x] Testimonials section
 - [x] Contact/CTA section
 - [x] Footer with social links
 
@@ -15,7 +15,6 @@
 - [x] Add smooth animations and transitions
 - [x] Implement hover effects on interactive elements
 - [x] Ensure responsive design for mobile/tablet/desktop
-- [ ] Add loading states and skeleton screens
 - [x] Optimize typography and spacing
 
 ## Database & Backend
@@ -27,9 +26,12 @@
 - [x] Add tRPC procedures for fetching testimonials
 
 ## Admin Features
-- [ ] Admin dashboard for managing projects
-- [ ] Admin dashboard for managing services
-- [ ] Admin dashboard for managing testimonials
+- [x] Admin dashboard UI for viewing projects
+- [x] Admin dashboard UI for viewing services
+- [x] Admin dashboard UI for viewing testimonials
+- [ ] CRUD procedures and forms for managing projects
+- [ ] CRUD procedures and forms for managing services
+- [ ] CRUD procedures and forms for managing testimonials
 - [ ] Image upload functionality for projects
 
 ## Testing & Polish
@@ -38,7 +40,8 @@
 - [x] Wire ProjectDetail page to tRPC queries with loading states
 - [x] Implement real contact actions (mailto, calendly links)
 - [x] Add real social media links in footer
+- [x] Create admin dashboard UI
 - [ ] Test responsive design across devices
-- [ ] Performance optimization
-- [ ] SEO optimization
+- [ ] Add SEO metadata and social preview tags
+- [ ] Performance optimization and verification
 - [ ] Final polish and refinements
