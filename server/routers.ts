@@ -2,9 +2,10 @@ import { COOKIE_NAME } from "@shared/const";
 import { getSessionCookieOptions } from "./_core/cookies";
 import { systemRouter } from "./_core/systemRouter";
 import { publicProcedure, router } from "./_core/trpc";
+import { getAllProjects, getFeaturedProjects, getProjectById, getAllServices, getAllTestimonials, getFeaturedTestimonials } from "./db";
+import { z } from "zod";
 
 export const appRouter = router({
-    // if you need to use socket.io, read and register route in server/_core/index.ts, all api should start with '/api/' so that the gateway can route correctly
   system: systemRouter,
   auth: router({
     me: publicProcedure.query(opts => opts.ctx.user),
@@ -17,12 +18,50 @@ export const appRouter = router({
     }),
   }),
 
-  // TODO: add feature routers here, e.g.
-  // todo: router({
-  //   list: protectedProcedure.query(({ ctx }) =>
-  //     db.getUserTodos(ctx.user.id)
-  //   ),
-  // }),
+  // Portfolio procedures
+  portfolio: router({
+    // Get all projects
+    getAllProjects: publicProcedure.query(async () => {
+      const projects = await getAllProjects();
+      return projects;
+    }),
+
+    // Get featured projects
+    getFeaturedProjects: publicProcedure
+      .input(z.object({ limit: z.number().optional() }).optional())
+      .query(async ({ input }) => {
+        const projects = await getFeaturedProjects(input?.limit);
+        return projects;
+      }),
+
+    // Get project by ID
+    getProjectById: publicProcedure
+      .input(z.object({ id: z.number() }))
+      .query(async ({ input }) => {
+        const project = await getProjectById(input.id);
+        return project;
+      }),
+
+    // Get all services
+    getAllServices: publicProcedure.query(async () => {
+      const services = await getAllServices();
+      return services;
+    }),
+
+    // Get all testimonials
+    getAllTestimonials: publicProcedure.query(async () => {
+      const testimonials = await getAllTestimonials();
+      return testimonials;
+    }),
+
+    // Get featured testimonials
+    getFeaturedTestimonials: publicProcedure
+      .input(z.object({ limit: z.number().optional() }).optional())
+      .query(async ({ input }) => {
+        const testimonials = await getFeaturedTestimonials(input?.limit);
+        return testimonials;
+      }),
+  }),
 });
 
 export type AppRouter = typeof appRouter;
