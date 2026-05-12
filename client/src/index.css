@@ -1,6 +1,6 @@
 @import "tailwindcss";
 @import "tw-animate-css";
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Playfair+Display:wght@600;700;800&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Syne:wght@400;500;600;700;800&display=swap');
 
 @custom-variant dark (&:is(.dark *));
 
@@ -44,74 +44,69 @@
 }
 
 :root {
-  --primary: var(--color-blue-700);
-  --primary-foreground: var(--color-blue-50);
-  --sidebar-primary: var(--color-blue-600);
-  --sidebar-primary-foreground: var(--color-blue-50);
-  --chart-1: var(--color-blue-300);
-  --chart-2: var(--color-blue-500);
-  --chart-3: var(--color-blue-600);
-  --chart-4: var(--color-blue-700);
-  --chart-5: var(--color-blue-800);
-  --radius: 0.65rem;
-  --background: oklch(1 0 0);
-  --foreground: oklch(0.235 0.015 65);
-  --card: oklch(1 0 0);
-  --card-foreground: oklch(0.235 0.015 65);
-  --popover: oklch(1 0 0);
-  --popover-foreground: oklch(0.235 0.015 65);
-  --secondary: oklch(0.98 0.001 286.375);
-  --secondary-foreground: oklch(0.4 0.015 65);
-  --muted: oklch(0.967 0.001 286.375);
-  --muted-foreground: oklch(0.552 0.016 285.938);
-  --accent: oklch(0.967 0.001 286.375);
-  --accent-foreground: oklch(0.141 0.005 285.823);
-  --destructive: oklch(0.577 0.245 27.325);
-  --destructive-foreground: oklch(0.985 0 0);
-  --border: oklch(0.92 0.004 286.32);
-  --input: oklch(0.92 0.004 286.32);
-  --ring: oklch(0.623 0.214 259.815);
-  --sidebar: oklch(0.985 0 0);
-  --sidebar-foreground: oklch(0.235 0.015 65);
-  --sidebar-accent: oklch(0.967 0.001 286.375);
-  --sidebar-accent-foreground: oklch(0.141 0.005 285.823);
-  --sidebar-border: oklch(0.92 0.004 286.32);
-  --sidebar-ring: oklch(0.623 0.214 259.815);
+  --primary: #000000;
+  --primary-foreground: #ffffff;
+  --sidebar-primary: #1a1a1a;
+  --sidebar-primary-foreground: #00ff00;
+  --chart-1: #00ff00;
+  --chart-2: #ff0000;
+  --chart-3: #ffff00;
+  --chart-4: #00ffff;
+  --chart-5: #ff00ff;
+  --radius: 0.5rem;
+  --background: #000000;
+  --foreground: #ffffff;
+  --card: #0a0a0a;
+  --card-foreground: #ffffff;
+  --popover: #0a0a0a;
+  --popover-foreground: #ffffff;
+  --secondary: #1a1a1a;
+  --secondary-foreground: #ffffff;
+  --muted: #333333;
+  --muted-foreground: #999999;
+  --accent: #00ff00;
+  --accent-foreground: #000000;
+  --destructive: #ff0000;
+  --destructive-foreground: #ffffff;
+  --border: #333333;
+  --input: #1a1a1a;
+  --ring: #00ff00;
+  --sidebar: #000000;
+  --sidebar-foreground: #ffffff;
+  --sidebar-accent: #00ff00;
+  --sidebar-accent-foreground: #000000;
+  --sidebar-border: #333333;
+  --sidebar-ring: #00ff00;
 }
 
 .dark {
-  --primary: var(--color-blue-700);
-  --primary-foreground: var(--color-blue-50);
-  --sidebar-primary: var(--color-blue-500);
-  --sidebar-primary-foreground: var(--color-blue-50);
-  --background: oklch(0.141 0.005 285.823);
-  --foreground: oklch(0.85 0.005 65);
-  --card: oklch(0.21 0.006 285.885);
-  --card-foreground: oklch(0.85 0.005 65);
-  --popover: oklch(0.21 0.006 285.885);
-  --popover-foreground: oklch(0.85 0.005 65);
-  --secondary: oklch(0.24 0.006 286.033);
-  --secondary-foreground: oklch(0.7 0.005 65);
-  --muted: oklch(0.274 0.006 286.033);
-  --muted-foreground: oklch(0.705 0.015 286.067);
-  --accent: oklch(0.274 0.006 286.033);
-  --accent-foreground:  oklch(0.92 0.005 65);
-  --destructive: oklch(0.704 0.191 22.216);
-  --destructive-foreground: oklch(0.985 0 0);
-  --border: oklch(1 0 0 / 10%);
-  --input: oklch(1 0 0 / 15%);
-  --ring: oklch(0.488 0.243 264.376);
-  --chart-1: var(--color-blue-300);
-  --chart-2: var(--color-blue-500);
-  --chart-3: var(--color-blue-600);
-  --chart-4: var(--color-blue-700);
-  --chart-5: var(--color-blue-800);
-  --sidebar: oklch(0.21 0.006 285.885);
-  --sidebar-foreground: oklch(0.85 0.005 65);
-  --sidebar-accent: oklch(0.274 0.006 286.033);
-  --sidebar-accent-foreground:  oklch(0.985 0 0);
-  --sidebar-border: oklch(1 0 0 / 10%);
-  --sidebar-ring: oklch(0.488 0.243 264.376);
+  --primary: #000000;
+  --primary-foreground: #ffffff;
+  --sidebar-primary: #1a1a1a;
+  --sidebar-primary-foreground: #00ff00;
+  --background: #000000;
+  --foreground: #ffffff;
+  --card: #0a0a0a;
+  --card-foreground: #ffffff;
+  --popover: #0a0a0a;
+  --popover-foreground: #ffffff;
+  --secondary: #1a1a1a;
+  --secondary-foreground: #ffffff;
+  --muted: #333333;
+  --muted-foreground: #999999;
+  --accent: #00ff00;
+  --accent-foreground: #000000;
+  --destructive: #ff0000;
+  --destructive-foreground: #ffffff;
+  --border: #333333;
+  --input: #1a1a1a;
+  --ring: #00ff00;
+  --sidebar: #000000;
+  --sidebar-foreground: #ffffff;
+  --sidebar-accent: #00ff00;
+  --sidebar-accent-foreground: #000000;
+  --sidebar-border: #333333;
+  --sidebar-ring: #00ff00;
 }
 
 @layer base {
@@ -120,6 +115,12 @@
   }
   body {
     @apply bg-background text-foreground;
+    font-family: 'Inter', sans-serif;
+  }
+  h1, h2, h3, h4, h5, h6 {
+    font-family: 'Syne', sans-serif;
+    font-weight: 800;
+    letter-spacing: -0.02em;
   }
   button:not(:disabled),
   [role="button"]:not([aria-disabled="true"]),
@@ -135,7 +136,7 @@
 }
 
 @layer components {
-  /* Premium animations */
+  /* Trexalab-inspired animations */
   @keyframes fadeInUp {
     from {
       opacity: 0;
@@ -178,6 +179,21 @@
     }
   }
 
+  @keyframes magneticHover {
+    0% {
+      transform: translate(0, 0);
+    }
+  }
+
+  @keyframes float {
+    0%, 100% {
+      transform: translateY(0px);
+    }
+    50% {
+      transform: translateY(-10px);
+    }
+  }
+
   .animate-fade-in-up {
     animation: fadeInUp 0.6s ease-out;
   }
@@ -194,20 +210,89 @@
     animation: slideInRight 0.6s ease-out;
   }
 
+  .animate-float {
+    animation: float 3s ease-in-out infinite;
+  }
+
+  /* Dashed borders - Trexalab style */
+  .border-dashed-accent {
+    border: 2px dashed #00ff00;
+  }
+
+  .border-dashed-red {
+    border: 2px dashed #ff0000;
+  }
+
+  .border-dashed-mixed {
+    border: 2px dashed #00ff00;
+    border-right-color: #ff0000;
+    border-bottom-color: #ff0000;
+  }
+
+  /* Accent markers */
+  .marker {
+    position: absolute;
+    width: 24px;
+    height: 24px;
+    background-color: #00ff00;
+    color: #000000;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 900;
+    font-size: 0.75rem;
+    font-family: 'Syne', sans-serif;
+  }
+
+  .marker-red {
+    background-color: #ff0000;
+  }
+
+  .marker-yellow {
+    background-color: #ffff00;
+    color: #000000;
+  }
+
+  .marker-top-left {
+    top: -12px;
+    left: -12px;
+  }
+
+  .marker-top-right {
+    top: -12px;
+    right: -12px;
+  }
+
+  .marker-bottom-left {
+    bottom: -12px;
+    left: -12px;
+  }
+
+  .marker-bottom-right {
+    bottom: -12px;
+    right: -12px;
+  }
+
+  /* Premium buttons */
   .btn-primary {
-    @apply px-6 py-3 bg-accent text-accent-foreground rounded-lg font-semibold hover:opacity-90 transition-opacity;
+    @apply px-6 py-3 bg-accent text-accent-foreground rounded-lg font-semibold hover:opacity-90 transition-all duration-300 uppercase text-sm font-bold tracking-wider;
   }
 
   .btn-secondary {
-    @apply px-6 py-3 bg-card text-foreground border border-border rounded-lg font-semibold hover:bg-muted transition-colors;
+    @apply px-6 py-3 bg-card text-foreground border border-border rounded-lg font-semibold hover:bg-muted transition-colors uppercase text-sm font-bold tracking-wider;
   }
 
+  .btn-outline-accent {
+    @apply px-6 py-3 bg-transparent border-2 border-accent text-accent rounded-lg font-semibold hover:bg-accent hover:text-accent-foreground transition-all duration-300 uppercase text-sm font-bold tracking-wider;
+  }
+
+  /* Section styling */
   .section-padding {
     @apply py-16 md:py-24 lg:py-32;
   }
 
   .gradient-text {
-    @apply bg-gradient-to-r from-accent to-blue-600 bg-clip-text text-transparent;
+    @apply bg-gradient-to-r from-accent to-red-500 bg-clip-text text-transparent;
   }
 
   .card-hover {
@@ -218,24 +303,21 @@
     @apply transition-all duration-300 ease-out;
   }
 
-  /**
-   * Custom container utility that centers content and adds responsive padding.
-   *
-   * This overrides Tailwind's default container behavior to:
-   * - Auto-center content (mx-auto)
-   * - Add responsive horizontal padding
-   * - Set max-width for large screens
-   *
-   * Usage: <div className="container">...</div>
-   *
-   * For custom widths, use max-w-* utilities directly:
-   * <div className="max-w-6xl mx-auto px-4">...</div>
-   */
+  /* Project cards with dashed borders */
+  .project-card {
+    @apply relative overflow-hidden border-2 border-dashed border-accent bg-card hover:border-red-500 transition-all duration-300;
+  }
+
+  .project-card-image {
+    @apply w-full h-full object-cover transition-transform duration-500 group-hover:scale-110;
+  }
+
+  /* Container */
   .container {
     width: 100%;
     margin-left: auto;
     margin-right: auto;
-    padding-left: 1rem; /* 16px - mobile padding */
+    padding-left: 1rem;
     padding-right: 1rem;
   }
 
@@ -246,16 +328,127 @@
 
   @media (min-width: 640px) {
     .container {
-      padding-left: 1.5rem; /* 24px - tablet padding */
+      padding-left: 1.5rem;
       padding-right: 1.5rem;
     }
   }
 
   @media (min-width: 1024px) {
     .container {
-      padding-left: 2rem; /* 32px - desktop padding */
+      padding-left: 2rem;
       padding-right: 2rem;
-      max-width: 1280px; /* Standard content width */
+      max-width: 1280px;
     }
   }
+
+  /* Accent lines */
+  .accent-line {
+    @apply h-0.5 bg-accent w-full;
+  }
+
+  .accent-line-red {
+    @apply h-0.5 bg-red-500 w-full;
+  }
+
+  /* Navigation styling */
+  nav {
+    @apply bg-black/95 backdrop-blur border-b border-border sticky top-0 z-100;
+  }
+
+  nav a {
+    @apply text-foreground transition-colors duration-300 relative;
+  }
+
+  nav a::after {
+    content: '';
+    @apply absolute bottom-0 left-0 w-0 h-0.5 bg-accent transition-all duration-300;
+  }
+
+  nav a:hover::after {
+    @apply w-full;
+  }
+
+  /* Stagger animations */
+  .stagger-item {
+    opacity: 0;
+    animation: fadeInUp 0.6s ease-out forwards;
+  }
+
+  .stagger-item:nth-child(1) { animation-delay: 0.1s; }
+  .stagger-item:nth-child(2) { animation-delay: 0.2s; }
+  .stagger-item:nth-child(3) { animation-delay: 0.3s; }
+  .stagger-item:nth-child(4) { animation-delay: 0.4s; }
+  .stagger-item:nth-child(5) { animation-delay: 0.5s; }
+  .stagger-item:nth-child(6) { animation-delay: 0.6s; }
+
+  /* Text colors */
+  .text-accent {
+    @apply text-accent;
+  }
+
+  .text-accent-red {
+    @apply text-red-500;
+  }
+
+  .text-secondary {
+    @apply text-muted-foreground;
+  }
+
+  /* Background utilities */
+  .bg-dark {
+    @apply bg-background;
+  }
+
+  .bg-card-dark {
+    @apply bg-card;
+  }
+
+  /* Border utilities */
+  .border-accent {
+    @apply border-accent;
+  }
+
+  .border-red {
+    @apply border-red-500;
+  }
+
+  /* Spacing utilities */
+  .gap-large {
+    @apply gap-12;
+  }
+
+  .py-large {
+    @apply py-16;
+  }
+}
+
+/* Scrollbar styling */
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background: #000000;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #00ff00;
+  border-radius: 5px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #ff0000;
+}
+
+/* Selection styling */
+::selection {
+  background-color: #00ff00;
+  color: #000000;
+}
+
+/* Focus states */
+button:focus,
+a:focus {
+  outline: 2px solid #00ff00;
+  outline-offset: 2px;
 }
